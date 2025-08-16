@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Связь с нами</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: url("background.png") no-repeat center center fixed;
+            background-size: cover;
+            /* картинка занимает весь экран */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .flower {
+            position: absolute;
+            width: 120px;
+            opacity: 0.25;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .flower.one {
+            top: 40px;
+            left: -30px;
+            transform: rotate(-15deg);
+        }
+
+        .flower.two {
+            bottom: 60px;
+            right: -40px;
+            transform: rotate(20deg);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.05);
+            }
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #C69052;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .logo {
+            margin-top: 30px;
+            width: 140px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .menu {
+            margin-top: 25px;
+            width: 90%;
+            max-width: 420px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(135deg, #C69052, #EDBE78);
+            padding: 15px 18px;
+            margin: 12px 0;
+            border-radius: 14px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .menu-item i {
+            font-size: 22px;
+            margin-right: 14px;
+        }
+
+        .menu-item:hover {
+            background: linear-gradient(135deg, #EDBE78, #C69052);
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 25px 10px;
+            text-align: center;
+            font-size: 15px;
+            color: #555;
+            background: rgba(255, 236, 207, 0.6);
+            border-top: 1px solid #e9cba5;
+            width: 100%;
+        }
+    </style>
+
+    <!-- Подключение иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- декоративные цветы -->
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="flower one" alt="flower">
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" class="flower two" alt="flower">
+
+    <!-- логотип -->
+    <img src="logo.png" alt="Логотип" class="logo">
+
+    <h1>Связь с нами</h1>
+
+    <div class="menu">
+        <a href="https://www.instagram.com/optom_moon_1" class="menu-item"><i class="fab fa-instagram"></i> Главный
+            аккаунт</a>
+        <a href="https://www.instagram.com/moon_bolshmer" class="menu-item"><i class="fab fa-instagram"></i> Второй
+            аккаунт</a>
+        <a href="https://www.instagram.com/optom_moon_2" class="menu-item"><i class="fab fa-instagram"></i> Дополнительный
+            ассортимент</a>
+        <a href="https://t.me/+jjQos7igzaUyMDYy" class="menu-item"><i class="fab fa-telegram"></i> Наш телеграмм</a>
+        <a href="https://t.me/+jjQos7igzaUyMDYy" class="menu-item"><i class="fas fa-credit-card"></i> Наш каспи магазин</a>
+        <a href="https://wa.me/77066136787" class="menu-item"><i class="fab fa-whatsapp"></i> Наш WhatsApp</a>
+        
+    </div>
+    <div class="footer">Женская одежда | Алматы</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll(".menu-item");
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = "1";
+                    item.style.transform = "translateY(0)";
+                }, index * 200);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
